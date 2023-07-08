@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to change the bottom window image
   function changeImage(imagePath) {
-    bottomWindow.innerHTML = `<img src="${imagePath}" alt="New Image">`;
+    const imageElement = bottomWindow.querySelector('img');
+    imageElement.src = imagePath;
   }
 
   // Add click event listener to each button
@@ -19,25 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // Change the image based on the button clicked
       switch (buttonId) {
         case 'button1':
-          changeImage('image2.jpeg');
+          changeImage('image2.jpg');
           break;
         case 'button2':
-          changeImage('image3.jpeg');
+          changeImage('image3.jpg');
           break;
         case 'button3':
-          changeImage('image4.jpeg');
+          changeImage('image4.jpg');
           break;
         case 'button4':
-          changeImage('image5.jpeg');
+          changeImage('image5.jpg');
           break;
         case 'button5':
-          changeImage('image6.jpeg');
+          changeImage('image6.jpg');
           break;
         case 'button6':
-          changeImage('image7.jpeg');
+          changeImage('image7.jpg');
           break;
         default:
-          changeImage('default-image.jpeg');
+          changeImage('default-image.jpg');
       }
     });
   });
