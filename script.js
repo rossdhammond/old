@@ -1,3 +1,10 @@
+  // Function to create the audio context on user gesture
+  function createAudioContext() {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
 document.addEventListener('DOMContentLoaded', function() {
   // Get the bottom window element
   const bottomWindow = document.getElementById('bottom-window');
@@ -23,12 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return audioContext.decodeAudioData(arrayBuffer);
   }
 
-  // Function to create the audio context on user gesture
-  function createAudioContext() {
-    if (!audioContext) {
-      audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    }
-  }
+
 
   // Function to play audio based on genre selection
   async function playAudio(genre) {
