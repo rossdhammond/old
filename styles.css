@@ -1,0 +1,11 @@
+/* Add your custom CSS styles here */
+body {
+  background-color: #f1f1f1;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+}
