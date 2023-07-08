@@ -17,7 +17,7 @@
 let select_channel;
 
 //////////////// On page load ////////////////
-$(function(){
+document.addEventListener('DOMContentLoaded', function() {
 
   // Primary audio context
   audioContext = createAudioContext();
