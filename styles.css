@@ -1,11 +1,30 @@
-/* Add your custom CSS styles here */
-body {
-  background-color: #f1f1f1;
+.container {
+  margin-top: 50px;
 }
 
-h1 {
-  color: #333;
-  font-size: 24px;
+.interactive-window {
+  border: 1px solid #ccc;
+  padding: 10px;
   text-align: center;
-  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+#top-window {
+  height: 300px;
+}
+
+#bottom-window {
+  height: 150px;
+}
+
+#top-window img,
+#bottom-window img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
 }
