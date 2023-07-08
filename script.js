@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let audioSrc = '';
     switch (genre) {
       case 'pop':
-        audioSrc = 'pop-music.wav';
+        audioSrc = 'pop-music.mp3';
         break;
       case 'musical':
-        audioSrc = 'musical-music.wav';
+        audioSrc = 'musical-music.mp3';
         break;
       case 'jazz':
-        audioSrc = 'jazz-music.wav';
+        audioSrc = 'jazz-music.mp3';
         break;
       default:
         return;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.play();
   }
 
-  // Add click event listener to each button
+  // Add click event listener to the play button
   playButton.addEventListener('click', function() {
     audio.play();
   });
