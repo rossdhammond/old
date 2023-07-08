@@ -29,3 +29,12 @@
   margin: 0 auto;
   object-fit: contain;
 }
+
+.audio-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
