@@ -14,11 +14,11 @@
 }
 
 #top-window {
-  height: 300px;
+  height: 400px;
 }
 
 #bottom-window {
-  height: 150px;
+  height: 200px;
 }
 
 #top-window img,
@@ -27,4 +27,5 @@
   max-height: 100%;
   display: block;
   margin: 0 auto;
+  object-fit: contain;
 }
