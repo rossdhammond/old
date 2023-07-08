@@ -19,25 +19,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // Change the image based on the button clicked
       switch (buttonId) {
         case 'button1':
-          changeImage('image2.jpg');
+          changeImage('image2.jpeg');
           break;
         case 'button2':
-          changeImage('image3.jpg');
+          changeImage('image3.jpeg');
           break;
         case 'button3':
-          changeImage('image4.jpg');
+          changeImage('image4.jpeg');
           break;
         case 'button4':
-          changeImage('image5.jpg');
+          changeImage('image5.jpeg');
           break;
         case 'button5':
-          changeImage('image6.jpg');
+          changeImage('image6.jpeg');
           break;
         case 'button6':
-          changeImage('image7.jpg');
+          changeImage('image7.jpeg');
           break;
         default:
-          changeImage('default-image.jpg');
+          changeImage('default-image.jpeg');
       }
     });
   });
