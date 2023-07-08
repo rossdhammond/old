@@ -23,11 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
     return audioContext.decodeAudioData(arrayBuffer);
   }
 
-  // Function to play audio based on genre selection
-  async function playAudio(genre) {
+  // Function to create the audio context on user gesture
+  function createAudioContext() {
     if (!audioContext) {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
     }
+  }
+
+  // Function to play audio based on genre selection
+  async function playAudio(genre) {
+    createAudioContext();
 
     let audioUrl = '';
     switch (genre) {
@@ -69,15 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add click event listener to the play button
   playButton.addEventListener('click', function() {
     const selectedGenre = genreDropdown.value;
-
-    // Check if the audio context is already running or created within the click event
-    if (audioContext && audioContext.state === 'suspended') {
-      audioContext.resume().then(function() {
-        playAudio(selectedGenre);
-      });
-    } else {
-      playAudio(selectedGenre);
-    }
+    playAudio(selectedGenre);
   });
 
   pauseButton.addEventListener('click', function() {
