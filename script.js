@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const playButton = document.getElementById('play-button');
   const pauseButton = document.getElementById('pause-button');
   const genreDropdown = document.getElementById('genre-dropdown');
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  let audioContext = null;
   let audioBuffer = null;
   let sourceNode = null;
 
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to play audio based on genre selection
   async function playAudio(genre) {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
     let audioUrl = '';
     switch (genre) {
       case 'pop':
@@ -65,7 +69,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add click event listener to the play button
   playButton.addEventListener('click', function() {
     const selectedGenre = genreDropdown.value;
-    playAudio(selectedGenre);
+
+    // Check if the audio context is already running or created within the click event
+    if (audioContext && audioContext.state === 'suspended') {
+      audioContext.resume().then(function() {
+        playAudio(selectedGenre);
+      });
+    } else {
+      playAudio(selectedGenre);
+    }
   });
 
   pauseButton.addEventListener('click', function() {
