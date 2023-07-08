@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let audioUrl = '';
     switch (genre) {
       case 'pop':
-        audioUrl = 'pop-music.mp3';
+        audioUrl = 'pop-music.wav';
         break;
       case 'musical':
-        audioUrl = 'musical-music.mp3';
+        audioUrl = 'musical-music.wav';
         break;
       case 'jazz':
-        audioUrl = 'jazz-music.mp3';
+        audioUrl = 'jazz-music.wav';
         break;
       default:
         return;
