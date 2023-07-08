@@ -23,29 +23,13 @@ $(function(){
   audioContext = createAudioContext();
 
   // Channel Names and URLs
-  ChannelNames = ["Kick",
-                  "Snare",
-                  "OH",
-                  "cymbals",
-                  "Bass",
-                  "Congas",
-                  "Gtr1",
-                  "Gtr2",
-                  "Vox",
-                  "Ham1",
-                  "Ham2"];
+  ChannelNames = ["Snare",
+                  "DI1",
+                  "DI4"];
 
-  ChannelUrls = [ 'StreetNoise_Revelations_Full/01_Kick.wav',
-                  'StreetNoise_Revelations_Full/02_Snare.wav',
-                  'StreetNoise_Revelations_Full/03_Overheads.wav',
-                  'StreetNoise_Revelations_Full/04_Cymbals.wav',
-                  'StreetNoise_Revelations_Full/05_Bass.wav',
-                  'StreetNoise_Revelations_Full/06_Congas.wav',
-                  'StreetNoise_Revelations_Full/07_ElecGtr1.wav',
-                  'StreetNoise_Revelations_Full/08_ElecGtr2.wav',
-                  'StreetNoise_Revelations_Full/09_LeadVox.wav',
-                  'StreetNoise_Revelations_Full/10_HammondLeslieHi.wav',
-                  'StreetNoise_Revelations_Full/11_HammondLeslieLo.wav'];
+  ChannelUrls = [ 'SzymonSkiba_SomeTrashyThrashIGuess_Full/02_Snare.wav',
+                  'SzymonSkiba_SomeTrashyThrashIGuess_Full/09_ElecGtrDI1.wav',
+                  'SzymonSkiba_SomeTrashyThrashIGuess_Full/12_ElecGtrDI4.wav'];
 
   // Create and populate channels array
   channels = new Array();
