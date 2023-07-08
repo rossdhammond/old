@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let audioSrc = '';
     switch (genre) {
       case 'pop':
-        audioSrc = 'pop-music.mp3';
+        audioSrc = 'pop-music.wav';
         break;
       case 'musical':
-        audioSrc = 'musical-music.mp3';
+        audioSrc = 'musical-music.wav';
         break;
       case 'jazz':
-        audioSrc = 'jazz-music.mp3';
+        audioSrc = 'jazz-music.wav';
         break;
       default:
         return;
