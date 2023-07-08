@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const playButton = document.getElementById('play-button');
   const pauseButton = document.getElementById('pause-button');
   const genreDropdown = document.getElementById('genre-dropdown');
-  const audio = new Audio();
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  let audioBuffer = null;
+  let sourceNode = null;
 
   // Function to change the bottom window image
   function changeImage(imagePath) {
@@ -14,37 +16,59 @@ document.addEventListener('DOMContentLoaded', function() {
     imageElement.src = imagePath;
   }
 
+  // Function to load audio file
+  async function loadAudioFile(url) {
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    return audioContext.decodeAudioData(arrayBuffer);
+  }
+
   // Function to play audio based on genre selection
-  function playAudio(genre) {
-    let audioSrc = '';
+  async function playAudio(genre) {
+    let audioUrl = '';
     switch (genre) {
       case 'pop':
-        audioSrc = 'pop-music.mp3';
+        audioUrl = 'pop-music.mp3';
         break;
       case 'musical':
-        audioSrc = 'musical-music.mp3';
+        audioUrl = 'musical-music.mp3';
         break;
       case 'jazz':
-        audioSrc = 'jazz-music.mp3';
+        audioUrl = 'jazz-music.mp3';
         break;
       default:
         return;
     }
-    audio.src = audioSrc;
-    audio.play();
+
+    // Stop the previous playback
+    stopAudio();
+
+    // Load and decode audio file
+    audioBuffer = await loadAudioFile(audioUrl);
+
+    // Create a new source node
+    sourceNode = audioContext.createBufferSource();
+    sourceNode.buffer = audioBuffer;
+    sourceNode.connect(audioContext.destination);
+    sourceNode.start();
+  }
+
+  // Function to stop audio playback
+  function stopAudio() {
+    if (sourceNode) {
+      sourceNode.stop();
+      sourceNode.disconnect();
+      sourceNode = null;
+    }
   }
 
   // Add click event listener to the play button
   playButton.addEventListener('click', function() {
-    audio.play();
+    const selectedGenre = genreDropdown.value;
+    playAudio(selectedGenre);
   });
 
   pauseButton.addEventListener('click', function() {
-    audio.pause();
-  });
-
-  genreDropdown.addEventListener('click', function(event) {
-    const genre = event.target.getAttribute('data-genre');
-    playAudio(genre);
+    stopAudio();
   });
 });
