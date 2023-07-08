@@ -33,6 +33,22 @@
         <div id="bottom-window" class="interactive-window">
           <img id="bottom-image" src="default-image.jpg" alt="Default Image">
         </div>
+        <div id="audio-controls" class="audio-controls">
+          <div class="btn-group" role="group" aria-label="Audio Controls">
+            <button class="btn btn-primary" id="play-button">Play</button>
+            <button class="btn btn-primary" id="pause-button">Pause</button>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="genre-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              Select Genre
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="genre-dropdown">
+              <li><a class="dropdown-item" href="#" data-genre="pop">Pop</a></li>
+              <li><a class="dropdown-item" href="#" data-genre="musical">Musical</a></li>
+              <li><a class="dropdown-item" href="#" data-genre="jazz">Jazz</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
