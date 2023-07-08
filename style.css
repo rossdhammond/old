@@ -1,0 +1,186 @@
+body {
+  background-color: rgb(34,46,60);
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 10px;
+}
+
+p {
+  font-size: 8px;
+}
+
+
+
+
+.row2 {
+  width: 100%;
+  margin-left: -100px;
+}
+
+
+.top_controls {
+  border: 2px solid black;
+  height: 300px;
+  width: 1050px;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.gain_control_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  margin: 5px;
+  background-color: rgb(126,170,183);
+  padding: 20px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.gate_control_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  margin: 5px;
+  background-color: rgb(126,170,183);
+  padding: 20px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.dynamics_control_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px;
+  background-color: rgb(126,170,183);
+  padding-top: 10px;
+  text-align: center;
+}
+
+.eq_control_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 350px;
+  margin: 5px;
+  padding-top: 10px;
+  background-color: rgb(126,170,183);
+  text-align: center;
+}
+
+.aura_control_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 245px;
+  margin: 5px;
+  padding-top: 10px;
+  background-color: rgb(126,170,183);
+  text-align: center;
+}
+
+
+
+
+.channel_strip {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 50px;
+  display: table-row;
+  background-color: rgb(126,170,183);
+}
+
+/* Fader */
+.fader_container {
+  transform: rotate(270deg);
+  transform-origin: top left;
+  margin-top: 150px;
+  margin-bottom: -45px;
+  margin-left: 1px;
+  width: 150px; /* actually height*/
+  height: 45px;
+  padding: 9px 5px;
+}
+
+.fader {
+  vertical-align: middle;
+  position: relative;
+  z-index: 2;
+  background: rgb(126,170,183);
+  opacity: 1;
+  border-radius: 10px;
+  margin: 1px;
+
+  outline-color: black;
+  outline-width: 1px;
+}
+
+
+.fader::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: green; /* Green background */
+  opacity: 0.8;
+  cursor: pointer; /* Cursor on hover */
+
+}
+
+.fader::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  opacity: 0.8;
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+
+.vu_container {
+}
+
+.pan_container {
+  padding: 1px 1px;
+  width: 45px;
+  /* border: 1px solid black; */
+}
+
+.pan {
+  vertical-align: middle;
+}
+
+
+.mute {
+  /* border: 1px solid black; */
+  width: 48px;
+  height: 20px;
+  margin-bottom: 10px;
+
+}
+
+.solo {
+  /* border: 1px solid black; */
+  width: 48px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.select {
+  width: 48px;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.btn {
+  margin-top: 10px;
+  width: 40px;
+  align: center;
+  height: 20px;
+  margin-bottom: 9px;
+}
